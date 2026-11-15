@@ -1,0 +1,14 @@
+# Manim
+media/
+__pycache__/
+*.pyc
+
+# LaTeX
+*.aux
+*.log
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
