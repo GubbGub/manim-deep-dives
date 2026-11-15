@@ -20,13 +20,13 @@ Each folder is one deep dive: the code that generates the visuals, plus the rend
 
 ## Integrals and u-substitution
 
-![u-substitution as matching strips of area](integrals/renders/usub_strips.png)
+![Title card](integrals/renders/title_card.png)
 
 There are two versions of this video.
 
 **`integrals.py`**: a four-scene first version on a dark background.
 
-**`integrals_eecs.py`**: a seven-slide lecture typeset in Computer Modern, connecting each idea to circuits:
+**`integrals_eecs.py`**: a seven-slide lecture connecting each idea to circuits. It is styled to match [my website](https://gubbgub.github.io) in light mode: a light-gray canvas, white cards with hairline borders, serif headings and equations (Charter, typeset by LaTeX), Inter for the interface text, `[MONO]` labels, and a single blue accent.
 
 | Slide | Idea | Engineering connection |
 |---|---|---|
@@ -35,6 +35,8 @@ There are two versions of this video.
 | 3–4 | u-substitution: each strip $dx$ maps to $du = g'(x)\,dx$ with the same area | Substitution is the chain rule run backwards |
 | 5 | Energy stored in a capacitor | With $i = C\,\frac{dv}{dt}$ and $u = v(t)$: $W = \int C\,v\,v'\,dt = \int_0^V C\,u\,du = \tfrac12 CV^2$ |
 | 6 | *Your turn* | Derive the energy in an inductor, $\tfrac12 LI^2$ |
+
+![u-substitution as matching strips of area](integrals/renders/usub_strips.png)
 
 ![Capacitor energy derivation](integrals/renders/capacitor_energy.png)
 
@@ -66,7 +68,8 @@ Each strand in the coral is one number $2 \le n \le 1500$, traced backward from 
 **Manim scenes**
 
 ```bash
-pip install -r requirements.txt          # also needs a LaTeX install (MiKTeX or TeX Live) and FFmpeg
+pip install -r requirements.txt          # also needs LaTeX (MiKTeX or TeX Live) and FFmpeg
+# integrals_eecs.py also uses the Inter and JetBrains Mono fonts (free; install them system-wide)
 cd integrals
 manim -pql integrals_eecs.py CapacitorEnergy            # quick preview of one slide
 manim -pqh integrals_eecs.py TitleCard Accumulation Families USubPicture USubAlgebra CapacitorEnergy YourTurn
