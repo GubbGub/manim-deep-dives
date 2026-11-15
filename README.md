@@ -96,6 +96,7 @@ sketches/         smaller Blender experiments
 ## Inspiration
 
 - **[3Blue1Brown](https://www.youtube.com/@3blue1brown)** (Grant Sanderson). His videos showed me that math can be *seen*, not just computed, and he created [Manim](https://github.com/3b1b/manim), the animation engine this repo is built on. The scenes here use the [community edition](https://www.manim.community/).
+- **[Bog](https://www.youtube.com/@bogxd)** (@bogxd), another big inspiration for starting these deep dives.
 
 ## Acknowledgments
 
