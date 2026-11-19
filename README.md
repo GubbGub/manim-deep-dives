@@ -13,6 +13,7 @@ Each folder is one deep dive: the code that generates the visuals, plus the rend
 | Deep dive | Tools | What it covers |
 |---|---|---|
 | [Integrals and u-substitution](integrals/) | Manim | Integrals as accumulated area, the Fundamental Theorem of Calculus, why antiderivatives carry a $+C$, and u-substitution as a change of variable. Ends with circuit applications. |
+| [Who pays a tariff?](tariffs/) | Manim | A 45-second companion to my [tariffs deep dive](https://gubbgub.github.io/tariffs.html): who actually bears a 25% tariff, animated from the same math, with the 2025 estimates from the New York Fed, Kiel Institute and Caroline Freund. |
 | [Collatz coral](collatz-coral/) | Blender, LaTeX | A visualization of the $3n+1$ problem: every starting number traced back to 1 as a branching 3D structure. |
 | [Sketches](sketches/) | Blender | Smaller experiments. |
 
@@ -41,6 +42,27 @@ There are two versions of this video.
 ![Capacitor energy derivation](integrals/renders/capacitor_energy.png)
 
 Rendered videos: [`integrals_eecs_lecture.mp4`](integrals/renders/integrals_eecs_lecture.mp4) · [`integrals_and_u_sub.mp4`](integrals/renders/integrals_and_u_sub.mp4)
+
+## Who pays a tariff?
+
+![Who pays a tariff?](tariffs/renders/who_pays_still.png)
+
+This one is a companion to an article on my site, [More Than a Tax on Imports](https://gubbgub.github.io/tariffs.html), where it explains Figure 2.
+
+A $100 part comes from a foreign exporter, and the U.S. adds a 25% tariff. If the exporter keeps its price, the importer pays $125 and Americans bear the whole tariff. If the exporter cuts its price to $80, the tariff is $20 and the importer still pays $100, so the exporter effectively paid it. Real life lands in between: the bars slide to each study's estimate, and the split bar shows who bore the cost.
+
+Nothing is typed in. For a U.S. share $s$, the scene solves for the exporter's price $p$ from
+
+$$(1+t)\,p - 100 = s \cdot t\,p \quad\Rightarrow\quad p = \frac{100}{1 + t - s\,t}$$
+
+and draws every bar and label from $p$. It ends with the rule behind it: $\text{buyers' share} = \frac{\varepsilon_s}{\varepsilon_s + \varepsilon_d}$, or *whoever has fewer alternatives pays*.
+
+| File | What it does |
+|---|---|
+| `who_pays.py` | The scene (`WhoPays`) |
+| `site_style.py` | The website's colors and fonts (Inter, with Lora for headlines) |
+
+Rendered video: [`who_pays.mp4`](tariffs/renders/who_pays.mp4)
 
 ## Collatz coral
 
@@ -89,6 +111,7 @@ pdflatex wallpaper.tex && pdftoppm -r 240 -png -singlefile wallpaper.pdf wallpap
 
 ```
 integrals/        Manim source + renders
+tariffs/          Manim companion to the tariffs article + render
 collatz-coral/    Blender scripts, LaTeX wallpaper, renders
 sketches/         smaller Blender experiments
 ```
