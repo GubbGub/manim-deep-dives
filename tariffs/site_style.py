@@ -20,3 +20,4 @@ LABEL = "Inter Medium"   # small caps-style labels. The site uses SF Mono for [T
                          # monospaces here (DejaVu, Liberation) look out of place next to Inter.
 
 config.background_color = CANVAS
+GOLD = "#C9A227"     # used only where the subject is literally gold

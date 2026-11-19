@@ -13,6 +13,7 @@ Each folder is one deep dive: the code that generates the visuals, plus the rend
 | Deep dive | Tools | What it covers |
 |---|---|---|
 | [Integrals and u-substitution](integrals/) | Manim | Integrals as accumulated area, the Fundamental Theorem of Calculus, why antiderivatives carry a $+C$, and u-substitution as a change of variable. Ends with circuit applications. |
+| [Triffin's dilemma](tariffs/) | Manim | Why being the world's reserve currency was a trap under the gold standard: U.S. gold drains while dollars pile up abroad, until the gold window closes in 1971. Also a companion to the tariffs article. |
 | [Who pays a tariff?](tariffs/) | Manim | A 45-second companion to my [tariffs deep dive](https://gubbgub.github.io/tariffs.html): who actually bears a 25% tariff, animated from the same math, with the 2025 estimates from the New York Fed, Kiel Institute and Caroline Freund. |
 | [Collatz coral](collatz-coral/) | Blender, LaTeX | A visualization of the $3n+1$ problem: every starting number traced back to 1 as a branching 3D structure. |
 | [Sketches](sketches/) | Blender | Smaller experiments. |
@@ -60,9 +61,23 @@ and draws every bar and label from $p$. It ends with the rule behind it: $\text{
 | File | What it does |
 |---|---|
 | `who_pays.py` | The scene (`WhoPays`) |
-| `site_style.py` | The website's colors and fonts (Inter, with Lora for headlines) |
+| `site_style.py` | The website's colors and fonts (Inter, with Lora for headlines), shared by both tariff scenes |
 
 Rendered video: [`who_pays.mp4`](tariffs/renders/who_pays.mp4)
+
+## Triffin's dilemma
+
+![Triffin's dilemma](tariffs/renders/triffin_still.png)
+
+The second tariffs companion, for the article's section on the dollar's global role. In 1944 the U.S. promised to trade gold for dollars at $35 an ounce. The world needed dollars to trade, so they flowed abroad every year, and every one was a claim on American gold. By 1960 the dollars abroad outnumbered the gold behind them. Robert Triffin warned that the U.S. faced two bad choices, and in August 1971 Nixon closed the "gold window." The video ends on the open question of whether a modern version of the trap exists.
+
+Each gold brick is $1 billion. The gold figures are real Federal Reserve numbers at $35 an ounce ($24.6B in 1949, $17.8B at the end of 1960, $10.5B in July 1971), with straight lines between them. The dollar bar is illustrative, except for where it crosses the gold in 1960, and the video says so on screen.
+
+| File | What it does |
+|---|---|
+| `triffin.py` | The scene (`Triffin`) |
+
+Rendered video: [`triffin.mp4`](tariffs/renders/triffin.mp4)
 
 ## Collatz coral
 
@@ -111,7 +126,7 @@ pdflatex wallpaper.tex && pdftoppm -r 240 -png -singlefile wallpaper.pdf wallpap
 
 ```
 integrals/        Manim source + renders
-tariffs/          Manim companion to the tariffs article + render
+tariffs/          Manim companions to the tariffs article + renders
 collatz-coral/    Blender scripts, LaTeX wallpaper, renders
 sketches/         smaller Blender experiments
 ```
